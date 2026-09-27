@@ -77,7 +77,7 @@ Il faut maintenant savoir qui rend le livre : ajoutez un paramètre `memberType:
 
 ## Étape 5 — Les nouveautés coûtent le double
 
-> Un livre de la catégorie nouveauté coûte 1 € par jour de retard. Le plafond reste de 10 €.
+> Un livre de la catégorie nouveauté coûte 1 € par jour de retard. Le plafond reste de 10 €, et les 3 jours de grâce des abonnés premium s'appliquent aussi aux nouveautés.
 
 Ajoutez `category: BookCategory` (`'standard' | 'new-release'`).
 
@@ -97,9 +97,10 @@ Les tests doivent rester verts pendant **tout** le refactor.
 
 ## Étape 6 — Une date de retour absente est une erreur
 
-> `feeInCents(loan, '')`, `feeInCents(loan, null)` ou une date impossible (`'2026-02-30'`) lèvent une erreur « La date de retour est obligatoire ».
+> `feeInCents(loan, '')`, `feeInCents(loan, null)` ou une date impossible (`'2026-02-30'`) lèvent une erreur « Date de retour absente ou invalide ».
 
-💡 `expect(() => ...).toThrow('La date de retour est obligatoire')`
+- 🔴 `feeInCents(loan, null)` ne compile pas : TypeScript refuse `null` pour un `string`. C'est le test qui vous oblige à décider : élargissez le type du paramètre à `string | null | undefined` (une date peut manquer quand elle vient d'un formulaire ou d'une API).
+- 💡 `expect(() => ...).toThrow('Date de retour absente ou invalide')`, et `isIsoDate` est fourni.
 
 ## ✅ Terminé quand…
 

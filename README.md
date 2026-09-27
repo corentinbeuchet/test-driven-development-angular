@@ -23,7 +23,7 @@ Dans ce TP, vous n'allez pas seulement écrire des tests : vous allez les écrir
 
 | Outil | Version |
 |---|---|
-| Node.js | 24 (LTS) : `node -v` doit afficher `v24.x` |
+| Node.js | 24 (LTS), version 24.15 ou plus : vérifiez avec `node -v` |
 | Angular / Vitest | 22 / 5, installés par `npm ci` |
 | Playwright / playwright-bdd | 1.63 / 9, installés par `npm ci` ; puis `npx playwright install chromium` (partie 2) |
 | Un assistant IA | celui de votre choix (partie 3) |

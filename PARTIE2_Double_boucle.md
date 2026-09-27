@@ -77,7 +77,7 @@ Un cycle rouge → vert → refactor par règle, avec ses commits. Pas de serveu
 
 ### 3. Boucle externe verte
 
-Créez le composant de la page (`npx ng generate component loans/loan-page`), qui utilise `LoanService` (`inject(LoanService)`), et affichez-le dans `App`. Relancez `npm run e2e` : le scénario passe, la CI redevient verte. Commit `feat: …`, puis retirez le `@wip` du scénario suivant.
+Créez le composant de la page (`npx ng generate component loans/loan-page --flat` : les fichiers vont directement dans `loans/`), qui utilise `LoanService` (`inject(LoanService)`), et affichez-le dans `App`. Relancez `npm run e2e` : le scénario passe, la CI redevient verte. Commit `feat: …`, puis retirez le `@wip` du scénario suivant.
 
 💡 `npm run e2e:ui` ouvre l'interface de Playwright : vous voyez chaque étape s'exécuter dans le navigateur, avec une capture à chaque action.
 
